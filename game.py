@@ -6,8 +6,7 @@ class TicTacToe():
         self.board = self.MakeBoard()
         self.CurrentWinner = None
 
-    @staticmethod
-    def MakeBoard():
+    def MakeBoard(self):
         return [' ' for _ in range(10)]
 
     def PrintBoard(self):
@@ -110,16 +109,19 @@ def play(game,x_player, o_player, print_game=True):
 
 def showScores(x_player, o_player):
     '''Score for the game : win 2 points tie 1 point'''
-    print('score:')
+    print('\nscore:')
     print(f"{x_player.name}"," : ",x_player.score)
     print(f"{o_player.name}"," : ",o_player.score)
+
+
 
 if __name__ == '__main__':
     print('Welcome to Tic Tac Toe game!\n')
     print("       |1|2|3|\n       |4|5|6|\n       |7|8|9|\n")
 
-    #----------part 1 & 3
-    '''
+    #----------player VS player
+
+    print('player VS player!\n')
     name_player1= input('Enter username for player 1: ')
     name_player2= input('Enter username for player 2: ')
     x_player = HumanPlayer('X',name_player1)
@@ -131,8 +133,10 @@ if __name__ == '__main__':
         start=input('play again? Y/N ')
     showScores(x_player, o_player)
 
-    '''
-    #----------part 2 & 3
+####################################################################
+
+    #----------player VS computer
+    print('\nplayer VS computer!\n')
     name_player= input('Enter username for player: ')
     #x_player = ComputerPlayer('X')
     x_player = ComputerPlayer('X')
