@@ -98,13 +98,13 @@ def play(game,x_player, o_player, print_game=True):
                     o_player.score+=2
                 else:
                     x_player.score+=2
-            return symbol  # ends the loop and exits the game
+            return
 
         if not game.Emptyposition():
             print("\nThe game ended in a tie!")
             o_player.score+=1
             x_player.score+=1
-            return symbol
+            return
         symbol = 'O' if symbol == 'X' else 'X'  # switches player
 
 def showScores(x_player, o_player):
@@ -119,7 +119,7 @@ if __name__ == '__main__':
     print('Welcome to Tic Tac Toe game!\n')
     print("       |1|2|3|\n       |4|5|6|\n       |7|8|9|\n")
 
-    #----------player VS player
+    #----------part 1 & 3
 
     print('player VS player!\n')
     name_player1= input('Enter username for player 1: ')
@@ -135,12 +135,11 @@ if __name__ == '__main__':
 
 ####################################################################
 
-    #----------player VS computer
+    #----------part 2 & 3
     print('\nplayer VS computer!\n')
     name_player= input('Enter username for player: ')
-    #x_player = ComputerPlayer('X')
-    x_player = ComputerPlayer('X')
-    o_player = HumanPlayer('O',name_player)
+    o_player = ComputerPlayer('O')
+    x_player = HumanPlayer('X',name_player)
     start=input('ready to start the game? Y/N ')
     while(start.upper()=='Y'):
         t = TicTacToe()
